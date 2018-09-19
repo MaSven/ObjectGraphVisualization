@@ -2,19 +2,16 @@ package ch.hsr.ogv.view;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
+import ch.hsr.ogv.model.EndpointType;
+import ch.hsr.ogv.util.ResourceLocator;
+import ch.hsr.ogv.util.ResourceLocator.Resource;
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.PhongMaterial;
 import javafx.scene.shape.MeshView;
 import javafx.scene.transform.Rotate;
-import ch.hsr.ogv.model.EndpointType;
-import ch.hsr.ogv.util.ObjModelLoader;
-import ch.hsr.ogv.util.ResourceLocator;
-import ch.hsr.ogv.util.ResourceLocator.Resource;
 
 /**
  * 
@@ -78,19 +75,9 @@ public class ArrowEdge extends Group {
 			this.additionalGap = 0;
 			break;
 		}
-		loadModel(modelUrl);
 	}
 
-	private void loadModel(URL modelUrl) {
-		Node[] rootNodes = ObjModelLoader.load(modelUrl);
-		for (Node n : rootNodes) {
-			MeshView mv = (MeshView) n;
-			this.meshViews.add(mv);
-		}
-		setColor(this.color);
-		getChildren().clear();
-		getChildren().addAll(Arrays.asList(rootNodes));
-	}
+	
 
 	public Color getColor() {
 		return this.color;

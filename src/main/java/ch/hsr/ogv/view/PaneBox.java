@@ -201,7 +201,6 @@ public class PaneBox implements Selectable {
 
 	private void buildBox() {
 		this.box = new Cuboid(INIT_DEPTH);
-		this.box.setDrawTopFace(false);
 		this.box.widthProperty().bind(this.borderPane.widthProperty());
 		this.box.heightProperty().bind(this.borderPane.heightProperty());
 		this.box.getTransforms().add(new Rotate(90, Rotate.X_AXIS));

@@ -1,6 +1,7 @@
 package ch.hsr.ogv.view;
 
-import org.fxyz.shapes.primitives.CuboidMesh;
+
+import org.fxyz3d.shapes.primitives.CuboidMesh;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.scene.CacheHint;
@@ -61,9 +62,7 @@ public class Cuboid extends Group {
 		return this.box.depthProperty();
 	}
 
-	public void setDrawTopFace(boolean drawTopFace) {
-		this.box.setDrawTopFace(drawTopFace);
-	}
+	
 
 	public void setDepth(double value) {
 		this.box.setDepth(value);
